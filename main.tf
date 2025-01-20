@@ -13,10 +13,10 @@ provider "proxmox" {
     pm_tls_insecure     = true
 }
 
-resource "proxmox_vm_qemu" "k3s-worker02" {
-    name                = "k3s-worker02"
-    target_node         = "hardik"
-    clone               = "hardik"
+resource "proxmox_vm_qemu" "k3s-worker02" {        #select instance name
+    name                = "k3s-worker02"           #select instance name
+    target_node         = "hardik"                 #your proxmox node name
+    clone               = "hardik"                 #your proxmox clone template name
     full_clone          = true
     cores               = 4
     memory              = 2048
