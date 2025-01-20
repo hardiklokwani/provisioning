@@ -1,13 +1,5 @@
 ---
 - hosts: all
-become: yes
-  tasks:
-    - name: update
-      apt:
-        update_cache: yes
-        upgrade: "yes"
-
-- hosts: all
   become: yes
   tasks:
     - name: install dependencies
