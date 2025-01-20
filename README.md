@@ -5,12 +5,12 @@ To automate the redundant task of creating virtual machines and then manually ss
 
 ### Pre - requisits:
 - You will need Proxmox up and running on your machine (for obvious reasons 🙂).
-- You will also need a well set VM template available on proxmox with all the dependencies you need pre-installed (or you can also use the [install-dependencies.yml]() playbook and configure it according to your needs).
+- You will also need a well set VM template available on proxmox with all the dependencies you need pre-installed (or you can also use the [install-dependencies.yml](https://github.com/hardiklokwani/provisioning/blob/master/boilerplates/ansible/playbooks/install-dependencies.yml) playbook and configure it according to your needs).
 - 
 ###Creating the Infrastructure with Terraform
 
 #### Step 1: Installing Terraform on the host and create a directory with the main.tf file, consisting all the configurations we need:
-Update the [main.tf]() file according to your needs and make some changes by adding your token id and secret ! (you can create your own token on the proxmox ui)
+Update the [main.tf](https://github.com/hardiklokwani/provisioning/blob/master/boilerplates/terraform/main.tf) file according to your needs and make some changes by adding your token id and secret ! (you can create your own token on the proxmox ui)
 ```shell
 mkdir terraform
 
@@ -50,7 +50,7 @@ cd playbooks/
 touch install-dependencies.yml
 ````
 
-### Step 2: Edit the [config file]() as per your needs and add all the hosts you want to conrol in the [inventory file]()
+### Step 2: Edit the [ansible.cfg](https://github.com/hardiklokwani/provisioning/blob/master/boilerplates/ansible/ansible.cfg) as per your needs and add all the hosts you want to conrol in the [inventory file](https://github.com/hardiklokwani/provisioning/blob/master/boilerplates/ansible/inventory)
 
 Disclaimer: I am using the key pass method to authenticate my credentials but it is a best practice to do so. The preffered way is to use the ssh key authentication.
 
@@ -58,7 +58,7 @@ Disclaimer: I am using the key pass method to authenticate my credentials but it
 ````
 ansible-playbook <file-name> -K          # -K parameter asks you for the internal sudo password to become root for performing certain tasks that require sudo permissions.
 ````
-#### and finally we installed all the dependencies needed to keep our machines ready to use out of the box !! 😎
+## and finally we installed all the dependencies needed to keep our machines ready to use out of the box !! 😎
 
 
 
